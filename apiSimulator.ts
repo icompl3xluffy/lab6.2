@@ -14,8 +14,8 @@ export const fetchProductCatalog = (): Promise<{ id: number; name: string; price
     
 };
 
-interface review{
-    id: number; 
+export interface review{
+    productId: number; 
     name: string; 
     price: number;
     reviewInfo:string
@@ -26,15 +26,14 @@ export const fetchProductReviews=(productId: number): Promise<Array<review>> => 
     setTimeout(() => {
         if (Math.random() < 0.8) {
          resolve([
-                {id: 1, name: "Laptop", price: 1200, reviewInfo:"Great Item"},
-                { id: 2, name: "Headphones", price: 200, reviewInfo:"good item: short charge time"},
+                {productId: productId, name: "Laptop", price: 1200, reviewInfo:"Great Item"},
+                { productId: productId, name: "Headphones", price: 200, reviewInfo:"good item: short charge time"},
             ]);
-//         } else {
+        } else {
         reject(`Failed to fetch reviews for product ID ${productId}`);
         }
     }, 1500);
-    });
-    
+    });  
 };
 
 
