@@ -46,7 +46,7 @@ export const fetchSalesReport = (): Promise<{totalSales: number; unitsSold: numb
             {totalSales: 7000, unitsSold: 10, averagePrice: 1400}
         );
         } else {
-        reject("Failed to fetch product catalog");
+        reject("Failed to fetch sales report");
         }
     }, 1000);
     });
